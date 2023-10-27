@@ -20,7 +20,6 @@ export const Product = ({ product }: ProductProps) => {
         Show Details
       </button>
       {details && <p>{product.description}</p>}
-      {/* <p>{product.description}</p> */}
     </div>
   );
 };
