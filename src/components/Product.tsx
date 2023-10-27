@@ -24,8 +24,9 @@ export const Product = ({ product }: ProductProps) => {
       {details && (
         <div>
           <p>{product.description}</p>
-          <p className="text-center font-semibold ">
-            Rate: <span>{product.rating.rate}</span>
+          <p className="text-center ">
+            Rate:{' '}
+            <span style={{ fontWeight: 'bold' }}>{product.rating.rate}</span>
           </p>
         </div>
       )}
