@@ -16,7 +16,7 @@ export const Product = ({ product }: ProductProps) => {
       <p>{product.title}</p>
       <span className="font-bold">{product.price} &euro;</span>
       <button
-        className={`py-2 px-4 border ${btnClassName}`}
+        className={`py-2 px-4 border rounded-full ${btnClassName}`}
         onClick={() => setDetails(!details)}
       >
         {details ? 'Hide Details' : 'Show Details'}
