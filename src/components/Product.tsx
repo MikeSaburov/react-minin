@@ -6,7 +6,7 @@ interface ProductProps {
 }
 
 export const Product = ({ product }: ProductProps) => {
-  const [description, setDiscription] = useState(false);
+  const [details, setDetails] = useState(false);
 
   return (
     <div className="border py-2 px-4 rounded flex flex-col items-center mb-2">
@@ -15,11 +15,11 @@ export const Product = ({ product }: ProductProps) => {
       <span className="font-bold">{product.price} &euro;</span>
       <button
         className="py-2 px-4 border bg-yellow-400"
-        onClick={() => setDiscription(!description)}
+        onClick={() => setDetails(!details)}
       >
         Show Details
       </button>
-      {description && <p>{product.description}</p>}
+      {details && <p>{product.description}</p>}
       {/* <p>{product.description}</p> */}
     </div>
   );
