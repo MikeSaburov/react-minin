@@ -21,7 +21,14 @@ export const Product = ({ product }: ProductProps) => {
       >
         {details ? 'Hide Details' : 'Show Details'}
       </button>
-      {details && <p>{product.description}</p>}
+      {details && (
+        <div>
+          <p>{product.description}</p>
+          <p className="text-center font-semibold ">
+            Rate: <span>{product.rating.rate}</span>
+          </p>
+        </div>
+      )}
     </div>
   );
 };
