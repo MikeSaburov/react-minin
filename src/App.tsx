@@ -1,8 +1,10 @@
+import React, { Children } from 'react';
 import { Product } from './components/Product';
 import { useProducts } from './hooks/products';
 import { Loader } from './components/Loader';
 import { Error } from './components/Error';
 import { Modal } from './components/Modal';
+import { CreateProduct } from './components/CreateProduct';
 
 function App() {
   const { isLoading, products, error } = useProducts();
@@ -14,7 +16,9 @@ function App() {
       {products.map((product) => (
         <Product key={product.id} product={product} />
       ))}
-      <Modal />
+      <Modal title="Create new product">
+        <CreateProduct />
+      </Modal>
     </div>
   );
 }
