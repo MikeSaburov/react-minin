@@ -19,7 +19,7 @@ function App() {
       ))}
       {modal && (
         <Modal title="Create new product">
-          <CreateProduct />
+          <CreateProduct onCreate={() => setModal(false)} />
         </Modal>
       )}
     </div>
