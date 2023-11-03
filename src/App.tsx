@@ -5,10 +5,16 @@ import { Loader } from './components/Loader';
 import { Error } from './components/Error';
 import { Modal } from './components/Modal';
 import { CreateProduct } from './components/CreateProduct';
+import { IProduct } from './models';
 
 function App() {
-  const { isLoading, products, error } = useProducts();
+  const { isLoading, products, error, addProduct } = useProducts();
   const [modal, setModal] = useState(true);
+
+  const createHandler = (product: IProduct) => {
+    setModal(false);
+    addProduct(product);
+  };
 
   return (
     <div className="container mx-auto max-w-2xl pt-5">
@@ -19,7 +25,7 @@ function App() {
       ))}
       {modal && (
         <Modal title="Create new product">
-          <CreateProduct onCreate={() => setModal(false)} />
+          <CreateProduct onCreate={createHandler} />
         </Modal>
       )}
     </div>

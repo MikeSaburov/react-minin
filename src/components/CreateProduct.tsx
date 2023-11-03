@@ -17,7 +17,7 @@ const productData: IProduct = {
 };
 
 interface CreateProductProps {
-  onCreate: () => void;
+  onCreate: (product: IProduct) => void;
 }
 
 export const CreateProduct = ({ onCreate }: CreateProductProps) => {
@@ -38,7 +38,7 @@ export const CreateProduct = ({ onCreate }: CreateProductProps) => {
       productData
     );
 
-    onCreate();
+    onCreate(response.data);
   };
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
